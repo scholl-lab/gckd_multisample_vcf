@@ -40,7 +40,24 @@ Parameters are set as follows:
 - `-o results/scatter/` - output directory
 - `-n 100000` - number of variants per file
 - `-p all_merged.` - prefix for the output files
+
 ```
 conda activate bcftools
 bcftools +scatter results/final/all_merged.vcf.gz -Oz --threads 4 -o results/scatter/ -n 100000 -p all_merged.
 ```
+
+As the jo takes relatively long to run, it is recommended to submit it as a cluster job using the following command:
+```bash
+sbatch bcftools_scatter.sh
+```
+
+You can also provide command line arguments to override the default parameter values of the script, for example:
+```bash
+sbatch bcftools_scatter.sh my_input.vcf.gz my_output_directory/ 50000 my_prefix.
+```
+
+Defaults are set as follows:
+- `INFILE=${1:-results/final/all_merged.vcf.gz}`
+- `OUTDIR=${2:-results/scatter/}`
+- `VARIANTS=${3:-100000}`
+- `PREFIX=${4:-all_merged.}`
