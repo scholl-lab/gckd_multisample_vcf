@@ -46,7 +46,7 @@ conda activate bcftools
 bcftools +scatter results/final/all_merged.vcf.gz -Oz --threads 4 -o results/scatter/ -n 100000 -p all_merged.
 ```
 
-As the jo takes relatively long to run, it is recommended to submit it as a cluster job using the following command:
+As the jo takes relatively long to run, it is recommended to submit it as a cluster job using the following command (helper script in `scripts/bcftools_scatter.sh`)):
 ```bash
 sbatch bcftools_scatter.sh
 ```
