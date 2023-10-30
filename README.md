@@ -53,7 +53,7 @@ sbatch bcftools_scatter.sh
 
 You can also provide command line arguments to override the default parameter values of the script, for example:
 ```bash
-sbatch bcftools_scatter.sh my_input.vcf.gz my_output_directory/ 50000 my_prefix.
+sbatch scripts/bcftools_scatter.sh my_input.vcf.gz my_output_directory/ 50000 my_prefix.
 ```
 
 Defaults are set as follows:
